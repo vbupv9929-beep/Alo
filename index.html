@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffb6d5">
+  <title>Happy Birthday, Juliet! 🎂</title>
+  <style>
+    :root { --pink:#ff78b7; --light-pink:#fff0f7; --deep-pink:#d94d91; --text:#713b59; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; font-family:"Trebuchet MS","Segoe UI",sans-serif; color:var(--text);
+      background:radial-gradient(circle at 12% 20%, #ffffffc9 0 3px, transparent 4px),
+                 radial-gradient(circle at 83% 14%, #ffffffc9 0 4px, transparent 5px),
+                 linear-gradient(145deg,#ffe2ef,#fff5fa 48%,#ffd1e6);
+      background-size:90px 90px,120px 120px,auto; overflow-x:hidden;
+    }
+    .wrap { width:min(920px,92%); margin:auto; padding:28px 0 42px; }
+    .topline { text-align:center; font-size:.95rem; letter-spacing:2px; color:#b14d83; }
+    .card { position:relative; margin:18px auto; padding:clamp(24px,5vw,54px); background:#ffffffd9;
+      border:2px solid #fff; border-radius:32px; box-shadow:0 18px 55px #d94d9122; text-align:center; backdrop-filter:blur(8px); }
+    .ribbon { font-size:2rem; }
+    h1 { color:var(--deep-pink); font-size:clamp(2.1rem,7vw,4.4rem); margin:12px 0; line-height:1.15; }
+    .name { display:inline-block; color:#a52d70; background:#ffe0ef; border-radius:16px; padding:4px 15px; }
+    .subtitle { font-size:clamp(1rem,3vw,1.25rem); line-height:1.9; max-width:650px; margin:18px auto; }
+    .cake { font-size:clamp(4rem,12vw,7rem); margin:12px 0; animation:bob 2.2s ease-in-out infinite; }
+    @keyframes bob { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-9px) rotate(2deg)} }
+    .buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:24px; }
+    button { border:0; border-radius:999px; padding:13px 22px; font-size:1rem; font-weight:700; cursor:pointer; transition:transform .2s,box-shadow .2s; }
+    button:hover { transform:translateY(-2px); box-shadow:0 7px 18px #d94d9130; }
+    .primary { color:white; background:linear-gradient(135deg,#ff78b7,#dc4b91); }
+    .secondary { color:#b13d7d; background:#ffe5f1; }
+    .message { display:none; margin:24px auto 0; padding:20px; max-width:650px; background:#fff0f7; border:1px dashed #f08bbd; border-radius:20px; line-height:2; animation:pop .35s ease-out; }
+    .message.show { display:block; }
+    @keyframes pop { from{opacity:0;transform:scale(.96)} to{opacity:1;transform:scale(1)} }
+    .wishes { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:22px; }
+    .wish { background:#fff6fa; border:1px solid #ffe0ef; border-radius:18px; padding:18px 12px; }
+    .wish span { display:block; font-size:1.7rem; margin-bottom:8px; }
+    footer { text-align:center; padding:10px; font-size:.9rem; color:#a45a80; }
+    .heart { position:fixed; bottom:-30px; pointer-events:none; z-index:5; animation:floatUp linear forwards; opacity:.8; }
+    @keyframes floatUp { to{transform:translateY(-110vh) rotate(360deg);opacity:0} }
+    .sparkle { position:absolute; font-size:1.5rem; }
+    .s1 { top:20px; left:8%; } .s2 { top:90px; right:7%; } .s3 { bottom:22%; left:6%; }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topline">♡ A LITTLE BIRTHDAY MAGIC ♡</div>
+    <section class="card">
+      <span class="sparkle s1">✨</span><span class="sparkle s2">💗</span><span class="sparkle s3">🌷</span>
+      <div class="ribbon">🎀 🧁 🎀</div>
+      <h1>Happy Birthday,<br><span class="name">Juliet</span>!</h1>
+      <p class="subtitle">
+        Today isn’t just another day — it’s the day someone truly special came into the world.
+        I hope your new year of life is filled with laughter, peaceful moments, lovely surprises,
+        and wishes coming true one by one. 💕
+      </p>
+      <div class="cake" aria-label="birthday cake">🎂</div>
+      <p><strong>Wishing you the sweetest birthday ever!</strong></p>
+      <div class="buttons">
+        <button class="primary" id="openMessage">Open your letter 💌</button>
+        <button class="secondary" id="musicButton">▶ Play birthday music 🎵</button>
+        <button class="secondary" id="confettiButton">Make it sparkle 🎉</button>
+      </div>
+      <div class="message" id="birthdayMessage">
+        <strong>To a wonderful friend, Juliet 💗</strong><br>
+        Thank you for being such a lovely part of this world. I hope your days are softer than flowers,
+        your laughter shines brighter than the stars, and you’re always surrounded by people who care
+        about you sincerely. Never forget that your presence makes a difference, and you deserve so
+        much happiness, today and always.
+        <br><br>Happy birthday! Here’s to many more years of love, success, beautiful memories, and joy! 🌸
+      </div>
+      <div class="wishes">
+        <div class="wish"><span>🌸</span><strong>Beautiful Days</strong><br>May every day bring you a reason to smile.</div>
+        <div class="wish"><span>⭐</span><strong>Dreams Come True</strong><br>One step closer to every dream you love.</div>
+        <div class="wish"><span>🫶</span><strong>Love & Peace</strong><br>A peaceful heart and people who truly care.</div>
+      </div>
+    </section>
+    <footer>Made with love 💗 · Tap the buttons for little surprises</footer>
+  </main>
+  <script>
+    document.getElementById("openMessage").addEventListener("click", () => {
+      const msg = document.getElementById("birthdayMessage");
+      msg.classList.toggle("show");
+      document.getElementById("openMessage").textContent =
+        msg.classList.contains("show") ? "Close your letter 💌" : "Open your letter 💌";
+      if (msg.classList.contains("show")) burst(18);
+    });
+
+    function heart() {
+      const el = document.createElement("div");
+      el.className = "heart";
+      const symbols = ["💗","💕","💖","🌸","✨","🎀"];
+      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.fontSize = (16 + Math.random() * 22) + "px";
+      el.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 8500);
+    }
+    function burst(count=30) { for(let i=0;i<count;i++) setTimeout(heart,i*55); }
+    document.getElementById("confettiButton").addEventListener("click", () => burst(45));
+
+    // A simple festive melody generated in the browser; no external music file needed.
+    let audioCtx=null, musicTimer=null, musicOn=false, noteIndex=0;
+    const melody=[523.25,659.25,783.99,659.25,698.46,783.99,880.00,783.99,659.25,523.25,587.33,659.25,523.25,392.00,440.00,523.25];
+    function playNote(freq,start) {
+      const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+      osc.type="sine"; osc.frequency.value=freq;
+      gain.gain.setValueAtTime(0.0001,start);
+      gain.gain.exponentialRampToValueAtTime(0.11,start+0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001,start+0.32);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(start); osc.stop(start+0.34);
+    }
+    function playNextNote() { if(!musicOn||!audioCtx)return; playNote(melody[noteIndex%melody.length],audioCtx.currentTime); noteIndex++; }
+    document.getElementById("musicButton").addEventListener("click",async()=>{
+      const btn=document.getElementById("musicButton");
+      if(!musicOn){
+        const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+        if(!AudioContextClass){btn.textContent="Music is not supported by this browser";return;}
+        audioCtx=audioCtx||new AudioContextClass();
+        if(audioCtx.state==="suspended")await audioCtx.resume();
+        musicOn=true;playNextNote();musicTimer=setInterval(playNextNote,360);
+        btn.textContent="■ Stop music 🔇";
+      }else{
+        musicOn=false;clearInterval(musicTimer);if(audioCtx)audioCtx.suspend();
+        btn.textContent="▶ Play birthday music 🎵";
+      }
+    });
+    setTimeout(()=>burst(10),700);
+  </script>
+</body>
+</html>
